@@ -13,7 +13,21 @@
 
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Platform')" class="grid">
-                    <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
+                    <flux:navlist.item 
+                    icon="home" 
+                    :href="route('dashboard')" 
+                    :current="request()->routeIs('dashboard')" 
+                    wire:navigate>{{ __('Dashboard') }}
+                    </flux:navlist.item>
+
+                    <flux:navlist.item
+                        icon="tag"
+                        :href="route('genres.index')"
+                        :current="request()->routeIs('genres.*')"
+                        wire:navigate>
+                        {{ __('Genres') }}
+                    </flux:navlist.item>
+                    
                 </flux:navlist.group>
             </flux:navlist>
 
@@ -60,7 +74,7 @@
                     <flux:menu.separator />
 
                     <flux:menu.radio.group>
-                        <flux:menu.item :href="route('profile.edit')" icon="cog" wire:navigate>{{ __('Settings') }}</flux:menu.item>
+                        <flux:menu.item :href="route('settings.profile')" icon="cog" wire:navigate>{{ __('Settings') }}</flux:menu.item>
                     </flux:menu.radio.group>
 
                     <flux:menu.separator />
@@ -110,7 +124,7 @@
                     <flux:menu.separator />
 
                     <flux:menu.radio.group>
-                        <flux:menu.item :href="route('profile.edit')" icon="cog" wire:navigate>{{ __('Settings') }}</flux:menu.item>
+                        <flux:menu.item :href="route('settings.profile')" icon="cog" wire:navigate>{{ __('Settings') }}</flux:menu.item>
                     </flux:menu.radio.group>
 
                     <flux:menu.separator />
